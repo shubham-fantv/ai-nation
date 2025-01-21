@@ -1,21 +1,22 @@
-import axios from "axios";
+import axios from 'axios';
 // import logout from '../components/Layout/util/logout';
-import { API_BASE_URL } from "@/src/constant/constants";
+import { API_BASE_URL } from '@/src/constant/constants';
 let Api = axios.create({
   baseURL: API_BASE_URL,
-  "Content-Type": "application/json",
+  'Content-Type': 'application/json',
 });
 
 const getToken = () => {
   if (
-    typeof window !== "undefined" &&
-    (localStorage.getItem("accessToken") || localStorage.getItem("guestAccessToken"))
+    typeof window !== 'undefined' &&
+    (localStorage.getItem('accessToken') ||
+      localStorage.getItem('guestAccessToken'))
   ) {
-    let token = localStorage.getItem("accessToken");
-    console.log("🚀 ~ getToken ~ token:", token);
+    let token = localStorage.getItem('accessToken');
+    console.log('🚀 ~ getToken ~ token:', token);
 
     if (!!!token) {
-      let guestAccesToken = localStorage.getItem("guestAccessToken");
+      let guestAccesToken = localStorage.getItem('guestAccessToken');
       return guestAccesToken;
     }
     return token;
@@ -26,16 +27,16 @@ const getToken = () => {
 Api.interceptors.request.use(
   (request) => {
     if (
-      (request.url.includes("v1/") || request.url.includes("v2/")) &&
-      (request.url.includes("kyc-login") || !request.url.includes("login"))
+      (request.url.includes('v1/') || request.url.includes('v2/')) &&
+      (request.url.includes('kyc-login') || !request.url.includes('login'))
     ) {
       const token = getToken();
       if (token) {
-        request.headers["Authorization"] = `Bearer ${token}`;
+        request.headers['Authorization'] = `Bearer ${token}`;
       }
     }
-    request.headers.platform = "web";
-    console.log("🚀 ~ reqest:", request.url);
+    request.headers.platform = 'web';
+    console.log('🚀 ~ reqest:', request.url);
 
     return request;
   },
@@ -49,13 +50,16 @@ Api.interceptors.response.use(
     return response?.data;
   },
   (error) => {
-    if (error?.request?.responseURL?.includes("login")) {
+    if (error?.request?.responseURL?.includes('login')) {
       return Promise.reject(error);
     }
 
     // Do something with response error
 
-    if (error?.response?.status === 401 || error?.response?.data?.errorCode === 403) {
+    if (
+      error?.response?.status === 401 ||
+      error?.response?.data?.errorCode === 403
+    ) {
       // logout();
     }
 
