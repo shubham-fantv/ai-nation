@@ -26,7 +26,7 @@ const images = {
 };
 
 const ImageCard = ({ src, name, mcap }) => (
-  <div className="relative min-w-[360px] h-[360px] overflow-hidden group">
+  <div className="relative min-w-[280px] h-[280px] overflow-hidden group">
     <img src={src} alt={name} className="w-full h-full object-cover" />
     <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/80 to-transparent rounded-bl-[44px] rounded-br-[44px]">
       <h3 className="text-white font-semibold">{name}</h3>
@@ -45,17 +45,17 @@ const AIUniverseGrid = () => {
         ENABLING AI UNIVERSE
       </h1>
       {rows.map((row, index) => {
-        const isClipped = index === 0 || index === 2; // First and third rows
+        const isClipped = index === 0 || index === 2;
         return (
           <div
             key={row}
-            className={`relative ${isClipped ? "h-[108px] overflow-hidden" : "h-auto"}`}
+            className={`relative ${isClipped ? "h-[140px] overflow-hidden" : "h-auto"}`}
           >
             <Marquee
               loop={false}
               pauseOnHover
               direction={directions[index % directions.length]}
-              speed={200}
+              speed={50}
             >
               <div className="flex gap-2 mt-2">
                 {[...images[row], ...images[row]].map((image, idx) => (
