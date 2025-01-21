@@ -176,7 +176,7 @@ const RevampHeader = ({ app }) => {
               {isMobile ? (
                 <Box className="fan__TigerMobileLogo">
                   <img
-                    src={"/images/fantv-new/logo.svg"}
+                    src={"/images/footer-logo.png"}
                     alt="mobile FanTV logo"
                     loading="eager"
                     decoding="async"
@@ -185,7 +185,7 @@ const RevampHeader = ({ app }) => {
               ) : (
                 <Box className="fan__tigerDekstopLogo">
                   <img
-                    src={"/images/fantv-new/logo.svg"}
+                    src={"/images/footer-logo.png"}
                     alt="FanTV Logo"
                     width={140}
                     loading="eager"
@@ -201,7 +201,7 @@ const RevampHeader = ({ app }) => {
                     variant="h6"
                     className="nav-item"
                     sx={{
-                      color: "#000000",
+                      color: "#FFF",
                       display: "flex",
                       fontFamily: "Nohemi",
                       fontSize: "16px",
@@ -213,7 +213,7 @@ const RevampHeader = ({ app }) => {
                     variant="h6"
                     className="nav-item"
                     sx={{
-                      color: "#000000",
+                      color: "#FFF",
                       display: "flex",
                       fontFamily: "Nohemi",
                       fontSize: "16px",
@@ -225,7 +225,7 @@ const RevampHeader = ({ app }) => {
                     variant="h6"
                     className="nav-item"
                     sx={{
-                      color: "#000000",
+                      color: "#FFF",
                       display: "flex",
                       fontFamily: "Nohemi",
                       fontSize: "16px",
@@ -237,7 +237,7 @@ const RevampHeader = ({ app }) => {
                     variant="h6"
                     className="nav-item"
                     sx={{
-                      color: "#000000",
+                      color: "#FFF",
                       display: "flex",
                       fontFamily: "Nohemi",
                       fontSize: "16px",

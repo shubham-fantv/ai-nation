@@ -34,26 +34,27 @@ const styles = {
     display: "flex",
     paddingTop: "40px",
     flexDirection: "column",
+    paddingRight: "40px",
 
     "& h1": {
       color: "#1E1E1E",
       fontSize: "80px",
       fontWeight: "800",
-      lineHeight: "96px",
+      lineHeight: "80px",
       fontFamily: "Bricolage Grotesque",
-      paddingBottom: "20px",
       textAlign: "left",
+      letterSpacing: "-0.04em",
       textTransform: "uppercase",
     },
 
     "& h2": {
       color: "#1E1E1E",
-      fontSize: "32px",
+      fontSize: "24px",
       fontFamily: "Nohemi",
       fontWeight: "500",
-      paddingBottom: "20px",
+      paddingTop: "20px",
       textAlign: "left",
-      lineHeight: "39px",
+      lineHeight: "24px",
       letterSpacing: " 0.15px",
     },
     "& p": {

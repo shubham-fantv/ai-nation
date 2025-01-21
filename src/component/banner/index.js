@@ -1,73 +1,50 @@
-import { Box, Container, Typography, useMediaQuery } from '@mui/material';
-import React, { useEffect, useRef } from 'react';
-import styles from './styles';
-import TextReveal from '../TextRevel';
+import { Box, Button, Container, Typography, useMediaQuery } from "@mui/material";
+import React, { useEffect, useRef } from "react";
+import styles from "./styles";
+import TextReveal from "../TextRevel";
 
 const Banner = () => {
-  const isMobile = useMediaQuery('(max-width:768px)');
-  const videoRef = useRef(null);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (video) {
-      video.load();
-
-      const playVideo = async () => {
-        try {
-          await video.play();
-        } catch (error) {
-          console.log('Video autoplay failed:', error);
-        }
-      };
-
-      video.addEventListener('loadedmetadata', playVideo);
-
-      const handleUserInteraction = () => {
-        playVideo();
-        document.removeEventListener('touchstart', handleUserInteraction);
-      };
-
-      document.addEventListener('touchstart', handleUserInteraction);
-
-      return () => {
-        video.removeEventListener('loadedmetadata', playVideo);
-        document.removeEventListener('touchstart', handleUserInteraction);
-      };
-    }
-  }, []);
+  const isMobile = useMediaQuery("(max-width:768px)");
 
   return (
-    <div>
-      <Box sx={{ ...styles.landingPage }}>
+    <div className="min-h-screen bg-gradient-to-r from-custom-gradient-start via-custom-gradient-middle to-custom-gradient-end  rounded-t-[48px] rounded-b-none">
+      <Box sx={{ ...styles.landingPage }} className="p-10">
         <Container sx={styles.containerStyle} maxWidth={false}>
           <Box sx={styles.mainPage}>
             <Box sx={styles.middleSection}>
               <Box
                 sx={styles.middleLeftSection}
-                className='animate__animated animate__fadeInLeft animate__delay-0.3s'
+                className="animate__animated animate__fadeInLeft animate__delay-0.3s"
               >
-                <Box sx={{ display: 'block' }}>
+                <Box sx={{ display: "block" }}>
                   {isMobile ? (
                     <>
                       <TextReveal delay={0.5}>
-                        <Typography variant='h1'>10 Mn </Typography>
-                        <Typography variant='h1'>$fAN IN</Typography>
-                        <Typography variant='h1'>Rewards </Typography>
+                        <Typography variant="h1">10 Mn </Typography>
+                        <Typography variant="h1">$fAN IN</Typography>
+                        <Typography variant="h1">Rewards </Typography>
                       </TextReveal>
                     </>
                   ) : (
                     <>
                       <TextReveal delay={0.5}>
-                        <Typography variant='h1'>
-                          Nation state for AI
-                        </Typography>
+                        <Typography variant="h1">Nation state for AI</Typography>
                       </TextReveal>
                       <TextReveal delay={0.8}>
-                        <Typography variant='h1'>AGents</Typography>
+                        <Typography variant="h1">AGents</Typography>
                       </TextReveal>
                     </>
                   )}
                 </Box>
+                <Typography variant="h2" className=" mb-6">
+                  Discover, build and co-own AI agents
+                </Typography>
+                <Button
+                  variant="contained"
+                  className="bg-white text-sm	 font-bold text-black px-4 py-2 text-lg  w-fit rounded-xl"
+                >
+                  Launch App
+                </Button>
               </Box>
 
               <Box sx={styles.middleRightSection}>
@@ -76,6 +53,24 @@ const Banner = () => {
             </Box>
           </Box>
         </Container>
+      </Box>
+      <Typography variant="h5" className="font-semibold text-center mb-6">
+        Featured Agents
+      </Typography>
+      <Box className="grid grid-cols-5 gap-6 pb-10 bg-gradient-to-t from-black">
+        {Array(5)
+          .fill(null)
+          .map((_, index) => (
+            <Box
+              key={index}
+              className="rounded-lg p-4 text-center hover:shadow-md transition duration-300"
+            >
+              <img src="/images/ai/mona.png" alt="Agent" className="rounded-md mb-4 mx-auto" />
+              <Typography variant="body1" className="font-bold text-white">
+                Mona AI M cap. $513K
+              </Typography>
+            </Box>
+          ))}
       </Box>
     </div>
   );
