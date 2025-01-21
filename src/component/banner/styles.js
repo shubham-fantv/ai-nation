@@ -3,6 +3,8 @@ const styles = {
     // height: "100vh",
     position: "relative",
     overflow: "hidden",
+    paddingLeft: "80px",
+    paddingRight: "80px",
   },
 
   containerStyle: {
