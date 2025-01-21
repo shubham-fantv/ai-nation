@@ -71,7 +71,7 @@ const styles = {
   button: {
     width: '100%',
     textAlign: 'left',
-    padding: '12px',
+    padding: '16px',
     margin: '5px 0px',
     transition: 'all 0.2s',
     borderRadius: '30px',
@@ -94,6 +94,7 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    color: 'white',
   },
   selectedIconWrapper: {
     color: 'white',
