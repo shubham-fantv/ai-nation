@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import styles from './styles';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import { display } from '@mui/system';
 
 const JoinTheRevolutions = () => {
   const isMobile = useMediaQuery('(max-width:768px)');
@@ -11,6 +10,7 @@ const JoinTheRevolutions = () => {
 
   const carouselData = [
     {
+      id: 0,
       title: '2024 Q1',
       items: [
         'Creator Tipping',
@@ -21,6 +21,7 @@ const JoinTheRevolutions = () => {
       ],
     },
     {
+      id: 1,
       title: '2024 Q2',
       items: [
         'Mobile App Launch',
@@ -31,6 +32,7 @@ const JoinTheRevolutions = () => {
       ],
     },
     {
+      id: 2,
       title: '2024 Q3',
       items: [
         'DeFi Integration',
@@ -41,6 +43,7 @@ const JoinTheRevolutions = () => {
       ],
     },
     {
+      id: 3,
       title: '2024 Q4',
       items: [
         'DeFi Integration',
@@ -52,7 +55,6 @@ const JoinTheRevolutions = () => {
     },
   ];
 
-  console.log(carouselData.length - 1, 'carouselData.length - 1');
   const handleNext = () => {
     if (currentPage !== carouselData.length - 1) {
       setCurrentPage((prev) => (prev + 1) % carouselData.length);
@@ -66,8 +68,6 @@ const JoinTheRevolutions = () => {
       );
     }
   };
-
-  const progressPercentage = ((currentPage + 1) / carouselData.length) * 100;
 
   return (
     <Box>
@@ -118,12 +118,25 @@ const JoinTheRevolutions = () => {
                   opacity: currentPage === 0 ? 0.5 : 1,
                 }}
               >
-                <ArrowBackIosIcon />
+                <ArrowBackIosIcon style={{ paddingLeft: '5px' }} />
               </IconButton>
-              <Box sx={styles.topLeftPadding}>
-                <Typography variant='body1'>
-                  Page {currentPage + 1} of {carouselData.length}
-                </Typography>
+              <Box sx={{ display: 'flex', gap: '5px', margin: '0px 10px' }}>
+                {carouselData.map((_, index) => (
+                  <Box
+                    key={index}
+                    sx={{
+                      margin: '0px 3px',
+                      width: '42px',
+                      height: '8px',
+                      borderRadius: '100px',
+                      backgroundColor:
+                        currentPage === index
+                          ? '#fff'
+                          : 'rgba(255, 255, 255, 0.30)',
+                      transition: 'background-color 0.3s ease',
+                    }}
+                  />
+                ))}
               </Box>
               <IconButton
                 onClick={handleNext}
@@ -132,7 +145,7 @@ const JoinTheRevolutions = () => {
                   opacity: currentPage === carouselData.length - 1 ? 0.5 : 1,
                 }}
               >
-                <ArrowForwardIosIcon />
+                <ArrowForwardIosIcon style={{ paddingRight: '1px' }} />
               </IconButton>
             </Box>
           </Box>

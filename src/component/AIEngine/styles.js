@@ -50,7 +50,7 @@ const styles = {
     height: '100%',
   },
   imageContainer: {
-    width: '60%',
+    width: '55%',
     height: '100%',
     display: 'flex',
   },
@@ -65,14 +65,14 @@ const styles = {
     objectFit: 'cover',
   },
   listContainer: {
-    width: '40%',
-    margin: '0px 20px',
+    width: '45%',
+    margin: '0px 15px',
   },
   button: {
     width: '100%',
     textAlign: 'left',
     padding: '16px',
-    margin: '5px 0px',
+    margin: '4px 0px',
     transition: 'all 0.2s',
     borderRadius: '30px',
     border: '1px solid transparent',
@@ -100,7 +100,7 @@ const styles = {
     color: 'white',
   },
   title: {
-    color: 'rgba(255, 255, 255, 0.70)',
+    color: 'rgba(255, 255, 255, 0.90)',
     fontFamily: 'Nohemi',
     fontSize: '16px',
     fontStyle: 'normal',
@@ -117,10 +117,11 @@ const styles = {
   },
   description: {
     margin: '4px 0px',
-    color: 'rgba(255, 255, 255, 0.70)',
-    fontWeight: '600',
+    color: 'rgba(255, 255, 255, 0.90)',
     fontFamily: 'Nohemi',
     fontSize: '14px',
+    lineHeight: '24px',
+    fontWeight: 400,
     fontStyle: 'normal',
   },
 };
