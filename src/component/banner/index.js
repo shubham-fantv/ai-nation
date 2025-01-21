@@ -8,7 +8,13 @@ const Banner = () => {
   const isMobile = useMediaQuery("(max-width:768px)");
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-custom-gradient-start via-custom-gradient-middle to-custom-gradient-end  rounded-t-[48px] rounded-b-none">
+    <Box
+      className="min-h-screen   rounded-t-[48px] rounded-b-none"
+      sx={{
+        background: isMobile ? "none" : "center/contain no-repeat url(/images/ai/bannerBg.png)",
+        backgroundSize: "cover",
+      }}
+    >
       <Box sx={{ ...styles.landingPage }} className="p-10">
         <Container sx={styles.containerStyle} maxWidth={false}>
           <Box sx={styles.mainPage}>
@@ -22,13 +28,10 @@ const Banner = () => {
                     <>
                       <TextReveal delay={0.5}>
                         <Typography variant="h1" style={{ fontFamily: "Bricolage Grotesque" }}>
-                          10 Mn{" "}
+                          Nation state for AI
                         </Typography>
                         <Typography variant="h1" style={{ fontFamily: "Bricolage Grotesque" }}>
-                          $fAN IN
-                        </Typography>
-                        <Typography variant="h1" style={{ fontFamily: "Bricolage Grotesque" }}>
-                          Rewards{" "}
+                          AGents
                         </Typography>
                       </TextReveal>
                     </>
@@ -71,7 +74,7 @@ const Banner = () => {
         </Typography>
         <Box className="grid gap-10 pb-10 bg-gradient-to-t from-black w-full">
           <div className="w-full">
-            <Marquee play={true} pauseOnHover>
+            <Marquee play={true} pauseOnHover direction="left">
               {Array(6)
                 .fill(null)
                 .map((_, index) => (
@@ -98,7 +101,7 @@ const Banner = () => {
           </div>
         </Box>
       </div>
-    </div>
+    </Box>
   );
 };
 
