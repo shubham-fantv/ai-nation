@@ -79,9 +79,10 @@ const Banner = ({ data }) => {
                 </Typography>
                 <Button
                   variant="contained"
-                  className={`px-4 py-2   min-w-[140px] w-min text-sm font-bold text-black bg-white rounded-xl ${
+                  className={`px-4 py-2 min-w-[150px] w-min text-sm font-bold text-black bg-white rounded-xl ${
                     isMobile ? "mx-auto" : ""
                   }`}
+                  style={{ backgroundColor: "white" }}
                   sx={isMobile ? { display: "block", margin: "0 auto" } : {}}
                   onClick={() => openLink("https://dev1.fantiger.com/")}
                 >

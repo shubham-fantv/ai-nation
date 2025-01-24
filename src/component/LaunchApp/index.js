@@ -31,6 +31,8 @@ const LaunchApp = () => {
       width: isMobile ? "100%" : "auto",
       fontSize: isMobile ? "1rem" : "1.25rem",
       padding: isMobile ? "10px 20px" : "12px 24px",
+      background: "white !important",
+      color: "black !important",
     },
   };
 
