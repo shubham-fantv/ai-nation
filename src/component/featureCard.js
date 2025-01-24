@@ -1,7 +1,9 @@
 import React from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, useMediaQuery } from '@mui/material';
 
 const FeatureCards = () => {
+  const isMobile = useMediaQuery('(max-width:768px)');
+
   const features = [
     {
       title: 'TRADE',
@@ -29,7 +31,11 @@ const FeatureCards = () => {
         justifyContent: 'center',
       }}
     >
-      <Box className='grid grid-cols-3 gap-8 w-full'>
+      <Box
+        className={`grid ${
+          isMobile ? 'px-4 grid-cols-1' : 'grid-cols-3'
+        } gap-8 w-full `}
+      >
         {features.map((feature, index) => (
           <Box
             key={index}
@@ -41,7 +47,9 @@ const FeatureCards = () => {
             </Box>
             <Typography
               variant='h5'
-              className='text-white font-bold tracking-wide mb-2 text-5xl'
+              className={`text-white font-bold tracking-wide mb-2 ${
+                isMobile ? 'text-4xl' : 'text-5xl'
+              }`}
               style={{ fontFamily: 'Nohemi' }}
             >
               {feature.title}

@@ -1,69 +1,120 @@
-import React from "react";
-import Marquee from "react-fast-marquee";
+import React from 'react';
+import Marquee from 'react-fast-marquee';
 
-const images = {
-  row1: [
-    { id: 1, name: "Mona AI", mcap: "$513K", src: "/images/ai/frame1.png" },
-    { id: 2, name: "Mona AI", mcap: "$513K", src: "/images/ai/frame1.png" },
-    { id: 3, name: "Mona AI", mcap: "$513K", src: "/images/ai/frame1.png" },
-    { id: 4, name: "Mona AI", mcap: "$513K", src: "/images/ai/frame1.png" },
-    { id: 5, name: "Mona AI", mcap: "$513K", src: "/images/ai/frame1.png" },
-  ],
-  row2: [
-    { id: 6, name: "Mona AI", mcap: "$513K", src: "/images/ai/frame1.png" },
-    { id: 7, name: "Mona AI", mcap: "$513K", src: "/images/ai/frame1.png" },
-    { id: 8, name: "Mona AI", mcap: "$513K", src: "/images/ai/frame1.png" },
-    { id: 9, name: "Mona AI", mcap: "$513K", src: "/images/ai/frame1.png" },
-    { id: 10, name: "Mona AI", mcap: "$513K", src: "/images/ai/frame1.png" },
-  ],
-  row3: [
-    { id: 11, name: "Mona AI", mcap: "$513K", src: "/images/ai/frame1.png" },
-    { id: 12, name: "Mona AI", mcap: "$513K", src: "/images/ai/frame1.png" },
-    { id: 13, name: "Mona AI", mcap: "$513K", src: "/images/ai/frame1.png" },
-    { id: 14, name: "Mona AI", mcap: "$513K", src: "/images/ai/frame1.png" },
-    { id: 15, name: "Mona AI", mcap: "$513K", src: "/images/ai/frame1.png" },
-  ],
-};
-
-const ImageCard = ({ src, name, mcap }) => (
-  <div className="relative min-w-[280px] h-[280px] overflow-hidden group">
-    <img src={src} alt={name} className="w-full h-full object-cover" />
-    <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/80 to-transparent rounded-bl-[44px] rounded-br-[44px]">
-      <h3 className="text-white font-semibold">{name}</h3>
-      <p className="text-white/80 text-sm">M cap. {mcap}</p>
-    </div>
-  </div>
-);
-
-const AIUniverseGrid = () => {
-  const rows = Object.keys(images);
-  const directions = ["right", "left", "right"];
+const ImageCard = ({ src, name, mCap, url, isTopClipped, isBottomClipped }) => {
+  const handleImageClick = (url) => {
+    if (window.confirm('Do you want to visit the AIAgent?')) {
+      window.location.href = `${url}`;
+    }
+  };
 
   return (
-    <div className="relative w-full overflow-hidden bg-blue-100 p-0">
-      <h1 className="text-5xl font-bold text-white text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+    <div
+      className={`relative min-w-[370px] overflow-hidden ${
+        isTopClipped ? 'h-[140px]' : isBottomClipped ? 'h-[140px]' : 'h-auto'
+      }`}
+      style={{
+        overflow: 'hidden',
+        borderRadius: isTopClipped
+          ? '0 0 48px 48px'
+          : isBottomClipped
+          ? '48px 48px 0 0'
+          : '48px',
+        backdropFilter: 'blur(18px)',
+        borderWidth: isTopClipped
+          ? '0px 10px 10px 10px'
+          : isBottomClipped
+          ? '10px 10px 0px 0px'
+          : '10px',
+        borderStyle: 'solid',
+        borderColor: '#758BA1',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+      onClick={() => handleImageClick(url)}
+    >
+      <div>
+        <img src={src} alt={name} className='object-cover w-full h-full' />
+        {!(isBottomClipped || isTopClipped) && (
+          <div
+            className='absolute bottom-0 left-0 right-0 p-5'
+            style={{
+              borderRadius: '0px 0px 20px 20px',
+              background:
+                'linear-gradient(180deg, rgba(30, 30, 30, 0.69) 0%, rgba(30, 30, 30, 0.40) 100%)',
+              backdropFilter: 'blur(12px)',
+              overflow: 'hidden',
+            }}
+          >
+            <h3 className='text-2xl font-semibold text-white'>{name}</h3>
+            <p className='text-sm font-normal text-white'>M cap.</p>
+            <p className='text-sm text-white/80'> {mCap}</p>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+const AIUniverseGrid = ({ data }) => {
+  const directions = ['right', 'left', 'right'];
+  const rows = [0, 1, 2];
+
+  const repeatedData = data?.data?.bottomBarAgents
+    ? [...data.data.bottomBarAgents, ...data.data.bottomBarAgents]
+    : [];
+
+  return (
+    <div
+      className='relative w-full p-0 overflow-hidden bg-blue-100'
+      style={{
+        backgroundImage: 'url(/images/aiUniverseBg.png)',
+        objectFit: 'cover',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
+      <h1
+        className='absolute z-10 text-5xl font-bold text-center text-white transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'
+        style={{ textShadow: '0px 3px 10px rgba(0, 0, 0, 0.85)' }}
+      >
         ENABLING AI UNIVERSE
       </h1>
-      {rows.map((row, index) => {
-        const isClipped = index === 0 || index === 2;
+      {rows.map((index) => {
+        const isTopClipped = index === 0;
+        const isBottomClipped = index === 2;
         return (
           <div
-            key={row}
-            className={`relative ${isClipped ? "h-[140px] overflow-hidden" : "h-auto"}`}
+            key={index}
+            className={`relative ${
+              isTopClipped
+                ? 'h-[140px] overflow-hidden [&_img]:translate-y-[-200px]'
+                : isBottomClipped
+                ? 'h-[140px] overflow-hidden [&_img]:translate-y-[0px]'
+                : 'h-auto'
+            }`}
           >
             <Marquee
               loop={false}
               pauseOnHover
-              direction={directions[index % directions.length]}
+              direction={directions[index]}
               speed={50}
             >
-              <div className="flex gap-2 mt-2">
-                {[...images[row], ...images[row]].map((image, idx) => (
+              <div
+                className='flex gap-2'
+                style={{
+                  margin: index === 1 || index === 2 ? '10px 0px' : '0px',
+                }}
+              >
+                {repeatedData.map((image, idx) => (
                   <ImageCard
                     key={`${image.id}-${idx}`}
-                    src={image.src}
+                    src={image.profilePic}
                     name={image.name}
-                    mcap={image.mcap}
+                    mCap={image.mcap}
+                    url={image?.redirectionUrl}
+                    isTopClipped={isTopClipped}
+                    isBottomClipped={isBottomClipped}
                   />
                 ))}
               </div>

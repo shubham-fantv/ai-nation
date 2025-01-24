@@ -1,7 +1,10 @@
+import { fontWeight } from '@mui/system';
+
 const styles = {
   container: {
     minHeight: '100vh',
-    padding: '32px',
+    marginTop: '30px',
+    padding: '14px',
   },
   content: {
     maxWidth: '112rem',
@@ -12,6 +15,14 @@ const styles = {
   },
   headingContainer: {
     flexDirection: 'row',
+    display: 'flex',
+    justifyContent: 'center',
+    textAlign: 'center',
+    alignItems: 'center',
+    margin: '40px 0px',
+  },
+  mobileHeadingContainer: {
+    flexDirection: 'column',
     display: 'flex',
     justifyContent: 'center',
     textAlign: 'center',
@@ -49,6 +60,21 @@ const styles = {
     padding: '14px',
     height: '100%',
   },
+  mobileCarousel: {
+    background:
+      'url(/images/aiEngineBg.png), linear-gradient(180deg, #CDFF4D -52.44%, #242424 130.44%)',
+    backgroundBlendMode: 'overlay',
+    display: 'flex',
+    flexDirection: 'column',
+    borderRadius: '24px',
+    padding: '8px',
+    height: '100%',
+  },
+  mobileImageContainer: {
+    width: '100%',
+    height: '100%',
+    display: 'flex',
+  },
   imageContainer: {
     width: '55%',
     height: '100%',
@@ -67,6 +93,12 @@ const styles = {
   listContainer: {
     width: '45%',
     margin: '0px 15px',
+  },
+  buttonContent: {
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    display: 'flex',
+    flexDirection: 'column',
   },
   button: {
     width: '100%',
@@ -89,12 +121,94 @@ const styles = {
     borderRadius: '30px',
     boxShadow: '0px 10px 12px 0px rgba(0, 0, 0, 0.35)',
   },
+  mobileImage: {
+    margin: '10px 6px',
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
+    borderRadius: '1rem',
+    overflow: 'hidden',
+  },
+  mobileButton: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    padding: '14px',
+    margin: '15px 5px',
+    transition: 'all 0.2s',
+    borderRadius: '30px',
+    border: '1px solid transparent',
+    backgroundColor: 'transparent',
+    '&:hover': {
+      backgroundColor: '#3b3b3b',
+    },
+  },
+  mobileIconWrapper: {
+    display: 'flex',
+    flexDirection: 'row',
+    color: '#fff',
+  },
+  mobileDescription: {
+    display: 'flex',
+    paddingTop: '10px',
+    flexDirection: 'column',
+    color: 'rgba(255, 255, 255, 0.70)',
+    fontFamily: 'Nohemi',
+    fontSize: '14px',
+    fontStyle: 'normal',
+    fontWeight: '400',
+    lineHeight: '20px',
+    textAlign: 'left',
+  },
+  mobileTitle: {
+    marginLeft: '10px',
+    color: 'rgba(255, 255, 255, 0.90)',
+    fontFamily: 'Nohemi',
+    fontSize: '16px',
+    fontStyle: 'normal',
+    fontWeight: 600,
+    marginTop: '2px',
+  },
+  mobileSelectedTitle: {
+    marginLeft: '10px',
+    color: '#fff',
+  },
   iconWrapper: {
     flexDirection: 'row',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     color: 'white',
+  },
+  carouselControls: {
+    margin: '15px 10px',
+  },
+  carouselButtonWrapper: {
+    color: '#fff',
+    width: '25px',
+    height: '25px',
+    fontWeight: '800',
+    padding: '4px',
+  },
+  carouselButton: {
+    transition: 'all 0.2s',
+    borderRadius: '30px',
+    border: '1px solid #fff',
+    backgroundColor: 'transparent',
+    height: '25px',
+    width: '25px',
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: '0px 5px',
+    '&:hover': {
+      backgroundColor: '#3b3b3b',
+      border: '1px solid #3b3b3b',
+    },
+    '&:focus': {
+      backgroundColor: '#3b3b3b',
+      border: '1px solid #3b3b3b',
+    },
   },
   selectedIconWrapper: {
     color: 'white',

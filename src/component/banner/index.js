@@ -1,102 +1,161 @@
-import { Box, Button, Container, Typography, useMediaQuery } from "@mui/material";
-import { default as React } from "react";
-import Marquee from "react-fast-marquee";
-import TextReveal from "../TextRevel";
-import styles from "./styles";
+import {
+  Box,
+  Button,
+  Container,
+  Typography,
+  useMediaQuery,
+} from '@mui/material';
+import { default as React } from 'react';
+import Marquee from 'react-fast-marquee';
+import TextReveal from '../TextRevel';
+import styles from './styles';
 
-const Banner = () => {
-  const isMobile = useMediaQuery("(max-width:768px)");
+const Banner = ({ data }) => {
+  const isMobile = useMediaQuery('(max-width:768px)');
 
   return (
     <Box
-      className="min-h-screen   rounded-t-[48px] rounded-b-none"
+      className={'min-h rounded-t-[48px] rounded-b-none'}
       sx={{
-        background: isMobile ? "none" : "center/contain no-repeat url(/images/ai/bannerBg.png)",
-        backgroundSize: "cover",
+        background: isMobile
+          ? 'center/contain no-repeat url(/images/ai/aiBannerMobileBg.png)'
+          : 'center/contain no-repeat url(/images/ai/bannerBg.png)',
+        backgroundSize: 'cover',
       }}
     >
-      <Box sx={{ ...styles.landingPage }} className="p-10">
+      <Box sx={{ ...styles.landingPage }} className={isMobile ? 'p-4' : 'p-10'}>
         <Container sx={styles.containerStyle} maxWidth={false}>
           <Box sx={styles.mainPage}>
             <Box sx={styles.middleSection}>
               <Box
-                sx={styles.middleLeftSection}
-                className="animate__animated animate__fadeInLeft animate__delay-0.3s"
+                sx={{
+                  ...styles.middleLeftSection,
+                  ...(isMobile && {
+                    width: '100%',
+                    textAlign: 'center',
+                    padding: '2rem 1rem',
+                  }),
+                }}
+                className='animate__animated animate__fadeInLeft animate__delay-0.3s'
               >
-                <Box sx={{ display: "block" }}>
+                <Box sx={{ display: 'block' }}>
                   {isMobile ? (
                     <>
                       <TextReveal delay={0.5}>
-                        <Typography variant="h1" style={{ fontFamily: "Bricolage Grotesque" }}>
-                          Nation state for AI
-                        </Typography>
-                        <Typography variant="h1" style={{ fontFamily: "Bricolage Grotesque" }}>
-                          AGents
+                        <Typography
+                          variant='h1'
+                          style={{
+                            fontFamily: 'Bricolage Grotesque',
+                          }}
+                        >
+                          Nation state for AI AGents
                         </Typography>
                       </TextReveal>
                     </>
                   ) : (
                     <>
                       <TextReveal delay={0.5}>
-                        <Typography variant="h1" style={{ fontFamily: "Bricolage Grotesque" }}>
+                        <Typography
+                          variant='h1'
+                          style={{ fontFamily: 'Bricolage Grotesque' }}
+                        >
                           Nation state for AI
                         </Typography>
                       </TextReveal>
                       <TextReveal delay={0.8}>
-                        <Typography variant="h1" style={{ fontFamily: "Bricolage Grotesque" }}>
+                        <Typography
+                          variant='h1'
+                          style={{ fontFamily: 'Bricolage Grotesque' }}
+                        >
                           AGents
                         </Typography>
                       </TextReveal>
                     </>
                   )}
                 </Box>
-                <Typography variant="h2" className=" mb-6">
+                <Typography
+                  variant='h2'
+                  className='mb-4'
+                  sx={
+                    isMobile
+                      ? {
+                          fontSize: '16px',
+                          fontFamily: 'Nohemi',
+                          fontWeight: '500',
+                          lineHeight: '16px',
+                        }
+                      : {}
+                  }
+                >
                   Discover, build and co-own AI agents
                 </Typography>
                 <Button
-                  variant="contained"
-                  className="bg-white text-sm	 font-bold text-black px-4 py-2 text-lg  w-fit rounded-xl"
+                  variant='contained'
+                  className={`px-4 py-2 text-sm font-bold text-black bg-white rounded-xl ${
+                    isMobile ? 'mx-auto' : ''
+                  }`}
+                  sx={isMobile ? { display: 'block', margin: '0 auto' } : {}}
                 >
                   Launch App
                 </Button>
               </Box>
 
-              <Box sx={styles.middleRightSection}>
+              <Box
+                sx={{
+                  ...styles.middleRightSection,
+                }}
+              >
                 <p>images</p>
               </Box>
             </Box>
           </Box>
         </Container>
       </Box>
-      <div className="w-full">
-        <Typography variant="h5" className="font-semibold text-center mb-6">
+      <div className='w-full mt-[20px]'>
+        <Typography
+          variant='h5'
+          className={`mb-6 font-semibold text-center ${
+            isMobile ? 'text-2xl' : 'text-4xl'
+          }`}
+        >
           Featured Agents
         </Typography>
-        <Box className="grid gap-10 pb-10 bg-gradient-to-t from-black w-full">
-          <div className="w-full">
-            <Marquee play={true} pauseOnHover direction="left">
-              {Array(6)
-                .fill(null)
-                .map((_, index) => (
+        <Box className='grid w-full gap-10 bg-gradient-to-t from-black via-black/50 to-transparent'>
+          <div className='w-[95%] mx-2 justify-items-start items-center *:w-full grid grid-cols-0 md:grid-cols-0 lg:grid-cols-0 gap-10'>
+            <Marquee play={true} pauseOnHover direction='left'>
+              {data?.data?.topBarAgents?.map((item, index) => (
+                <a href={item?.redirectionUrl} rel='noreferrer' key={index}>
                   <Box
-                    key={index}
-                    className="rounded-lg p-10 text-center hover:shadow-md transition duration-300"
+                    className={`text-center transition duration-300 rounded-lg hover:shadow-md ${
+                      isMobile ? 'p-4' : 'p-10'
+                    }`}
                   >
                     <img
-                      src="/images/ai/mona.png"
-                      alt="Agent"
-                      className="rounded-md mb-2 mx-auto"
+                      src={item?.profilePic}
+                      alt='Agent'
+                      className={`mx-auto mb-2 rounded-md w-20 h-20`}
                     />
-                    <Box className="flex flex-row justify-center align-center gap-2 text-center">
-                      <Typography variant="body1" className="font-bold text-white">
-                        Mona AI
+                    <Box className='flex flex-row justify-center gap-2 text-center align-center'>
+                      <Typography
+                        variant='body1'
+                        className={`font-bold text-white ${
+                          isMobile ? 'text-sm' : ''
+                        }`}
+                      >
+                        {item?.name}
                       </Typography>
-                      <Typography variant="body2" className="font-thin text-white mt-0.5">
-                        M cap. $513K
+                      <Typography
+                        variant='body2'
+                        className={`font-thin text-white mt-0.5 ${
+                          isMobile ? 'text-xs' : ''
+                        }`}
+                      >
+                        M cap. {item?.mcap}
                       </Typography>
                     </Box>
                   </Box>
-                ))}
+                </a>
+              ))}
             </Marquee>
           </div>
         </Box>

@@ -11,12 +11,15 @@ const styles = {
     aspectRatio: '1200 / 526',
     marginBottom: '120px',
     marginTop: '40px',
+    borderRadius: '32px',
 
     '@media (max-width: 767px)': {
       aspectRatio: '0',
       height: '100%',
       width: '100%',
       marginBottom: '20px',
+      borderRadius: '24px',
+      marginTop: '10px',
     },
   },
   boxContainer: {
@@ -42,8 +45,8 @@ const styles = {
     justifyContent: 'center',
     '@media (max-width:767px)': {
       flexWrap: 'wrap',
-      marginTop: '16px',
-      marginBottom: '16px',
+      // marginTop: '16px',
+      // marginBottom: '16px',
     },
   },
   container: {
@@ -75,16 +78,21 @@ const styles = {
       fontWeight: '600',
     },
     '@media(max-width:767px)': {
+      display: 'flex',
       width: '100%',
-      marginTop: '10px',
-      marginBottom: '10px',
-      flexDirection: 'column',
+      height: '60px',
+      borderRadius: '16px',
+      flexDirection: 'row',
+      justifyContent: 'flex-start',
+      alignContent: 'flex-start',
       '& p': {
         fontSize: '32px',
         fontWeight: '700',
         fontFamily: 'Nohemi',
         lineHeight: '24px',
         color: '#1E1E1E',
+        paddingTop: '6px',
+        paddingLeft: '5px',
       },
       '& h4': {
         color: '#C102C1',
@@ -154,8 +162,9 @@ const styles = {
     alignItems: 'center',
     '@media(max-width:767px)': {
       width: '100%',
-      padding: '0px',
+      padding: '16px',
       marginTop: '16px',
+      borderRadius: '24px',
       border: `1px solid rgba(255, 255, 255, 0.85)`,
       background:
         'linear-gradient(180deg, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.16) 100%)',

@@ -10,6 +10,7 @@ import { setSignWalletPopupOpen } from '../../redux/slices/layout';
 import { formatWalletAddress } from '../../utils/common';
 import WalletConnectModal from './WalletConnectModal';
 import styles from './style';
+import MenuIcon from '@mui/icons-material/Menu';
 
 const LogOutNavItem = [
   {
@@ -270,7 +271,7 @@ const RevampHeader = ({ app }) => {
           {isMobile && (
             <Box>
               <Box sx={styles.btnContainer} onClick={handleWalletClick}>
-                <img src='/images/rocket-launch.svg' />
+                <img src='/images/rocket-launch.svg' alt={'rocket-icon'} />
                 {wallet.connected ? (
                   <Button
                     sx={{
@@ -289,7 +290,7 @@ const RevampHeader = ({ app }) => {
                     sx={{
                       color: '#000000',
                       fontFamily: 'Nohemi',
-                      fontSize: '16px',
+                      fontSize: '12px',
                     }}
                   >
                     Connect Wallet
@@ -305,7 +306,9 @@ const RevampHeader = ({ app }) => {
 
           {isMobile && (
             <Box sx={styles.profileNavBar} onClick={toggleDrawer(true)}>
-              <img src='/images/menu.svg' />
+              <MenuIcon
+                style={{ color: 'white', marginTop: '8px', marginLeft: '10px' }}
+              />
             </Box>
           )}
 
@@ -326,7 +329,7 @@ const RevampHeader = ({ app }) => {
                 alignItems='center'
               >
                 <Box sx={styles.btnContainer} onClick={handleWalletClick}>
-                  <img src='/images/rocket-launch.svg' />
+                  <img src='/images/rocket-launch.svg' alt={'rocket-icon'} />
                   {wallet.connected ? (
                     <Button
                       sx={{

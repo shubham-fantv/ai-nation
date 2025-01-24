@@ -4,15 +4,44 @@ import styles from './styles';
 
 const LaunchApp = () => {
   const isMobile = useMediaQuery('(max-width:768px)');
+
+  const mobileStyles = {
+    wrapper: {
+      padding: isMobile ? '20px' : styles.wrapper.padding,
+    },
+    imageContainer: {
+      minHeight: isMobile ? '300px' : styles.imageContainer.minHeight,
+      padding: isMobile ? '20px 10px' : styles.imageContainer.padding,
+    },
+    content: {
+      maxWidth: isMobile ? '100%' : styles.content.maxWidth,
+      padding: isMobile ? '0' : styles.content.padding,
+    },
+    typography: {
+      fontSize: isMobile ? '2rem' : '3.75rem',
+      lineHeight: isMobile ? '2.5rem' : '4.5rem',
+      marginBottom: isMobile ? '1rem' : '2rem',
+    },
+    noteText: {
+      fontSize: isMobile ? '1rem' : '1.5rem',
+      marginBottom: isMobile ? '1.5rem' : '2rem',
+    },
+    button: {
+      width: isMobile ? '100%' : 'auto',
+      fontSize: isMobile ? '1rem' : '1.25rem',
+      padding: isMobile ? '10px 20px' : '12px 24px',
+    },
+  };
+
   return (
-    <Box sx={styles.wrapper}>
+    <Box sx={{ ...styles.wrapper, ...mobileStyles.wrapper }}>
       <Box
         style={{
           background: isMobile
             ? 'none'
             : 'center/contain no-repeat url(/images/ai/launch-app-bg.png)',
         }}
-        sx={styles.imageContainer}
+        sx={{ ...styles.imageContainer, ...mobileStyles.imageContainer }}
       >
         <Box
           sx={{
@@ -22,20 +51,25 @@ const LaunchApp = () => {
             display: 'flex',
           }}
         >
-          <Box sx={styles.content}>
-            <Typography variant='h1' className='text-white font-bold text-6xl'>
+          <Box sx={{ ...styles.content, ...mobileStyles.content }}>
+            <Typography
+              variant='h1'
+              className='font-bold text-white'
+              sx={mobileStyles.typography}
+            >
               The home for every creator
             </Typography>
             <Typography
               variant='h5'
-              className='text-white font-extrabold text-xl'
-              sx={styles.noteTextStyles}
+              className='font-extrabold text-white'
+              sx={{ ...styles.noteTextStyles, ...mobileStyles.noteText }}
             >
               Start earning and owning new Agents now
             </Typography>
             <Button
               variant='contained'
-              className='bg-white text-sm	 font-bold text-black px-4 py-2 text-lg  w-fit rounded-xl'
+              className='text-black bg-white rounded-xl'
+              sx={mobileStyles.button}
             >
               Launch App
             </Button>

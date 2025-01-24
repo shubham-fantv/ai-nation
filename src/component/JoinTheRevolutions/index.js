@@ -70,18 +70,32 @@ const JoinTheRevolutions = () => {
   };
 
   return (
-    <Box>
-      <Typography sx={styles.title} variant='h1'>
+    <Box style={{ marginTop: isMobile ? '10px' : '100px' }}>
+      <Typography
+        sx={{
+          ...styles.title,
+          fontSize: isMobile ? '24px' : '32px',
+          textAlign: 'center',
+          padding: isMobile ? '20px 0' : styles.title.padding,
+        }}
+        variant='h1'
+      >
         Join the revolution
       </Typography>
 
-      <Box sx={styles.wrapper}>
+      <Box
+        sx={{
+          ...styles.wrapper,
+          padding: isMobile ? '0 16px' : styles.wrapper.padding,
+        }}
+      >
         <Box
           style={{
             background: isMobile
               ? 'none'
               : 'center/contain no-repeat url(/images/tokenPoolBg.png)',
             backgroundSize: 'cover',
+            width: isMobile ? '100%' : undefined,
           }}
           sx={styles.imageContainer}
         >
@@ -91,13 +105,18 @@ const JoinTheRevolutions = () => {
               width: isMobile ? '100%' : '400px',
               display: 'flex',
               alignItems: 'center',
-              gap: '20px',
+              gap: isMobile ? '10px' : '20px',
               flexDirection: 'column',
               justifyContent: 'space-around',
             }}
           >
             <Box sx={styles.topLeftPadding}>
-              <Typography variant='h1'>
+              <Typography
+                variant='h1'
+                sx={{
+                  fontSize: isMobile ? '20px' : '32px',
+                }}
+              >
                 {carouselData[currentPage].title}
               </Typography>
             </Box>
@@ -107,7 +126,7 @@ const JoinTheRevolutions = () => {
                 justifyContent: 'center',
                 alignItems: 'center',
                 flexDirection: 'row',
-                paddingBottom: '10px',
+                paddingBottom: isMobile ? '5px' : '10px',
                 width: '100%',
               }}
             >
@@ -116,18 +135,30 @@ const JoinTheRevolutions = () => {
                 style={{
                   ...styles.iconContainer,
                   opacity: currentPage === 0 ? 0.5 : 1,
+                  padding: isMobile ? '8px' : '12px',
                 }}
               >
-                <ArrowBackIosIcon style={{ paddingLeft: '5px' }} />
+                <ArrowBackIosIcon
+                  style={{
+                    fontSize: isMobile ? '16px' : '24px',
+                    paddingLeft: '5px',
+                  }}
+                />
               </IconButton>
-              <Box sx={{ display: 'flex', gap: '5px', margin: '0px 10px' }}>
+              <Box
+                sx={{
+                  display: 'flex',
+                  gap: '5px',
+                  margin: '0px 10px',
+                }}
+              >
                 {carouselData.map((_, index) => (
                   <Box
                     key={index}
                     sx={{
                       margin: '0px 3px',
-                      width: '42px',
-                      height: '8px',
+                      width: isMobile ? '32px' : '42px',
+                      height: isMobile ? '6px' : '8px',
                       borderRadius: '100px',
                       backgroundColor:
                         currentPage === index
@@ -143,24 +174,47 @@ const JoinTheRevolutions = () => {
                 style={{
                   ...styles.iconContainer,
                   opacity: currentPage === carouselData.length - 1 ? 0.5 : 1,
+                  padding: isMobile ? '8px' : '12px',
                 }}
               >
-                <ArrowForwardIosIcon style={{ paddingRight: '1px' }} />
+                <ArrowForwardIosIcon
+                  style={{
+                    fontSize: isMobile ? '16px' : '24px',
+                    paddingRight: '1px',
+                  }}
+                />
               </IconButton>
             </Box>
           </Box>
 
-          <Box sx={styles.cardContainer}>
-            <Box sx={styles.cardWrapContainer}>
+          <Box
+            sx={{
+              ...styles.cardContainer,
+              padding: isMobile ? '0px' : styles.cardContainer.padding,
+            }}
+          >
+            <Box
+              sx={{
+                ...styles.cardWrapContainer,
+                gap: isMobile ? '12px' : styles.cardWrapContainer.gap,
+              }}
+            >
               {carouselData[currentPage].items.map((item, index) => (
-                <Box key={index} sx={styles.container}>
+                <Box
+                  key={index}
+                  sx={{
+                    ...styles.container,
+                    padding: isMobile ? '12px' : styles.container.padding,
+                    fontSize: isMobile ? '14px' : '16px',
+                  }}
+                >
                   <img
                     src='/images/ai/star.svg'
-                    width='20px'
-                    height='20px'
+                    width={isMobile ? '16px' : '20px'}
+                    height={isMobile ? '16px' : '20px'}
                     alt='star'
                   />
-                  <p>{item}</p>
+                  <p style={{ fontSize: '16px', fontWeight: 500 }}>{item}</p>
                 </Box>
               ))}
             </Box>
