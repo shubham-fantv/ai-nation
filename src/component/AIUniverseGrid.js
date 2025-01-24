@@ -86,7 +86,7 @@ const AIUniverseGrid = ({ data }) => {
         return (
           <div
             key={index}
-            className={`relative w-[370px] h-[140px] ${
+            className={`relative h-[140px] ${
               isTopClipped
                 ? 'h-[140px] overflow-hidden [&_img]:translate-y-[-200px]'
                 : isBottomClipped
