@@ -87,18 +87,14 @@ const JoinTheRevolutions = () => {
         sx={{
           ...styles.wrapper,
           padding: isMobile ? '0 16px' : styles.wrapper.padding,
+          background: isMobile
+            ? 'center/contain no-repeat url(/images/ai/joinTheRevolutionBg.png)'
+            : 'center/contain no-repeat url(/images/tokenPoolBg.png)',
+          backgroundSize: 'cover',
+          width: isMobile ? '100%' : undefined,
         }}
       >
-        <Box
-          style={{
-            background: isMobile
-              ? 'none'
-              : 'center/contain no-repeat url(/images/tokenPoolBg.png)',
-            backgroundSize: 'cover',
-            width: isMobile ? '100%' : undefined,
-          }}
-          sx={styles.imageContainer}
-        >
+        <Box sx={styles.imageContainer}>
           <Box
             sx={{
               textAlign: 'center',
