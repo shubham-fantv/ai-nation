@@ -24,7 +24,7 @@ const Banner = ({ data }) => {
         backgroundSize: 'cover',
       }}
     >
-      <Box sx={{ ...styles.landingPage }} className={isMobile ? 'p-4' : 'p-10'}>
+      <Box sx={{ ...styles.landingPage }} className={isMobile ? 'p-4' : 'p-0'}>
         <Container sx={styles.containerStyle} maxWidth={false}>
           <Box sx={styles.mainPage}>
             <Box sx={styles.middleSection}>
@@ -60,7 +60,7 @@ const Banner = ({ data }) => {
                           variant='h1'
                           style={{ fontFamily: 'Bricolage Grotesque' }}
                         >
-                          Nation state for AI
+                          Nation state for
                         </Typography>
                       </TextReveal>
                       <TextReveal delay={0.8}>
@@ -68,7 +68,7 @@ const Banner = ({ data }) => {
                           variant='h1'
                           style={{ fontFamily: 'Bricolage Grotesque' }}
                         >
-                          AGents
+                          AI AGents
                         </Typography>
                       </TextReveal>
                     </>
@@ -92,7 +92,7 @@ const Banner = ({ data }) => {
                 </Typography>
                 <Button
                   variant='contained'
-                  className={`px-4 py-2 min-w-[170px] w-min text-sm font-bold text-black bg-white rounded-xl ${
+                  className={`px-4 py-2 max-w-[170px] text-sm font-bold text-black bg-white rounded-xl ${
                     isMobile ? 'mx-auto' : ''
                   }`}
                   style={{ backgroundColor: 'white', fontFamily: '600' }}
@@ -114,7 +114,7 @@ const Banner = ({ data }) => {
           </Box>
         </Container>
       </Box>
-      <div className='w-full mt-[20px]'>
+      <div className='w-full'>
         <Typography
           variant='h5'
           className={`mb-6 font-semibold text-center ${
