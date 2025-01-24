@@ -1,6 +1,7 @@
 import { Box, Button, Typography, useMediaQuery } from "@mui/material";
 import React from "react";
 import styles from "./styles";
+import { openLink } from "../../utils/common";
 
 const LaunchApp = () => {
   const isMobile = useMediaQuery("(max-width:768px)");
@@ -66,6 +67,7 @@ const LaunchApp = () => {
               variant="contained"
               className="text-black bg-white rounded-xl"
               sx={mobileStyles.button}
+              onClick={() => openLink("https://dev1.fantiger.com/")}
             >
               Launch App
             </Button>

@@ -7,7 +7,7 @@ import { memo, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import useIsMobile from "../../hooks/useIsMobile";
 import { setSignWalletPopupOpen } from "../../redux/slices/layout";
-import { formatWalletAddress } from "../../utils/common";
+import { formatWalletAddress, openLink } from "../../utils/common";
 import WalletConnectModal from "./WalletConnectModal";
 import styles from "./style";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -44,8 +44,7 @@ const RevampHeader = ({ app }) => {
   }, [layoutData?.isSignWalletPopupOpen]);
 
   const handleWalletClick = (event) => {
-    event.stopPropagation();
-    setWalletAnchorEl(event.currentTarget);
+    openLink("https://dev1.fantiger.com/");
   };
 
   const handleWalletClose = () => {
@@ -255,32 +254,16 @@ const RevampHeader = ({ app }) => {
             <Box>
               <Box sx={styles.btnContainer} onClick={handleWalletClick}>
                 <img src="/images/rocket-launch.svg" alt={"rocket-icon"} />
-                {wallet.connected ? (
-                  <Button
-                    sx={{
-                      color: "#000000",
-                      fontFamily: "Nohemi",
-                      fontSize: "16px",
-                      "&:hover": {
-                        backgroundColor: "transparent",
-                      },
-                    }}
-                  >
-                    {formatWalletAddress(wallet?.address)}
-                  </Button>
-                ) : (
-                  <Button
-                    sx={{
-                      color: "#000000",
-                      fontFamily: "Nohemi",
-                      fontSize: "12px",
-                    }}
-                  >
-                    Connect Wallet
-                  </Button>
-                )}
+                <Button
+                  sx={{
+                    color: "#000000",
+                    fontFamily: "Nohemi",
+                    fontSize: "12px",
+                  }}
+                >
+                  Launch App
+                </Button>
               </Box>
-              <WalletConnectModal anchorEl={walletAnchorEl} onClose={handleWalletClose} />
             </Box>
           )}
 
@@ -299,32 +282,16 @@ const RevampHeader = ({ app }) => {
               <Box display={"flex"} height={"auto"} gap="10px" alignItems="center">
                 <Box sx={styles.btnContainer} onClick={handleWalletClick}>
                   <img src="/images/rocket-launch.svg" alt={"rocket-icon"} />
-                  {wallet.connected ? (
-                    <Button
-                      sx={{
-                        color: "#000000",
-                        fontFamily: "Nohemi",
-                        fontSize: "16px",
-                        "&:hover": {
-                          backgroundColor: "transparent",
-                        },
-                      }}
-                    >
-                      {formatWalletAddress(wallet?.address)}
-                    </Button>
-                  ) : (
-                    <Button
-                      sx={{
-                        color: "#000000",
-                        fontFamily: "Nohemi",
-                        fontSize: "16px",
-                      }}
-                    >
-                      Connect Wallet
-                    </Button>
-                  )}
+                  <Button
+                    sx={{
+                      color: "#000000",
+                      fontFamily: "Nohemi",
+                      fontSize: "12px",
+                    }}
+                  >
+                    Launch App
+                  </Button>
                 </Box>
-                <WalletConnectModal anchorEl={walletAnchorEl} onClose={handleWalletClose} />
               </Box>
             </Box>
           )}

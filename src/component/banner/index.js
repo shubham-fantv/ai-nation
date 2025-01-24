@@ -83,6 +83,7 @@ const Banner = ({ data }) => {
                     isMobile ? "mx-auto" : ""
                   }`}
                   sx={isMobile ? { display: "block", margin: "0 auto" } : {}}
+                  onClick={() => openLink("https://dev1.fantiger.com/")}
                 >
                   Launch App
                 </Button>
