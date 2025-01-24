@@ -12,11 +12,14 @@ const styles = {
     marginBottom: '120px',
     marginTop: '40px',
     borderRadius: '32px',
+    height: '100%',
+    width: '100%',
 
     '@media (max-width: 767px)': {
       aspectRatio: '0',
       height: '100%',
       width: '100%',
+      padding: '20px',
       marginBottom: '20px',
       borderRadius: '24px',
       marginTop: '10px',
