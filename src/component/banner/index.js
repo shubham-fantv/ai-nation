@@ -14,6 +14,7 @@ import { openLink } from '../../utils/common';
 const Banner = ({ data }) => {
   const isMobile = useMediaQuery('(max-width:768px)');
 
+  console.log(isMobile, 'isMobile');
   return (
     <Box
       className={'min-h rounded-t-[48px] rounded-b-none'}
@@ -92,10 +93,13 @@ const Banner = ({ data }) => {
                 </Typography>
                 <Button
                   variant='contained'
-                  className={`px-4 py-2 max-w-[170px] text-sm font-bold text-black bg-white rounded-xl ${
-                    isMobile ? 'mx-auto' : ''
-                  }`}
-                  style={{ backgroundColor: 'white', fontFamily: '600' }}
+                  className={`px-4 py-2 max-w-[170px] text-sm font-bold text-black bg-white rounded-xl`}
+                  style={{
+                    backgroundColor: 'white',
+                    fontFamily: '600',
+                    borderRadius: '12px',
+                    margin: isMobile ? 'auto' : '10px 0px',
+                  }}
                   sx={isMobile ? { display: 'block', margin: '0 auto' } : {}}
                   onClick={() => openLink('https://dev1.fantiger.com/')}
                 >
