@@ -69,7 +69,7 @@ const LaunchApp = () => {
               variant="contained"
               className="text-black bg-white rounded-xl"
               sx={mobileStyles.button}
-              onClick={() => openLink("https://dev1.fantiger.com/")}
+              onClick={() => openLink(process.env.NEXT_PUBLIC_REDIRECT_URL)}
             >
               Launch App
             </Button>
