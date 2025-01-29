@@ -47,7 +47,7 @@ const styles = {
 
         '@media (max-width:767px)': {
           position: 'relative',
-          marginRight: '20px',
+          marginRight: '0px',
         },
 
         '& .fan__tigerDekstopLogo': {
@@ -62,7 +62,7 @@ const styles = {
         },
         '& .fan__TigerMobileLogo': {
           ' & img': {
-            maxWidth: '130px',
+            // maxWidth: '130px',
           },
         },
       },
@@ -541,13 +541,13 @@ const styles = {
       height: '100%',
       fontFamily: 'Nohemi',
       lineHeight: '21px',
-      paddingRight: '20px',
+      paddingRight: '10px',
       paddingLeft: '6px',
     },
     '& img': {
       height: '20px',
       width: '20px',
-      marginLeft: '20px',
+      marginLeft: '10px',
     },
     '&:hover': {
       backgroundColor: '#FFF',

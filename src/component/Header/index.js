@@ -183,6 +183,7 @@ const RevampHeader = ({ app }) => {
                 <Box className='fan__TigerMobileLogo'>
                   <img
                     src={'/images/ai/aiNationLogo.png'}
+                    style={{ height: '40px', width: '180px' }}
                     alt='mobile FanTV logo'
                     loading='eager'
                     decoding='async'
@@ -268,23 +269,25 @@ const RevampHeader = ({ app }) => {
           </Box>
 
           {isMobile && (
-            <Box>
-              <Box sx={styles.btnContainer} onClick={handleWalletClick}>
-                <img src='/images/rocket-launch.svg' alt={'rocket-icon'} />
-                <Button
-                  sx={{
-                    color: '#000000',
-                    fontFamily: 'Nohemi',
-                    fontSize: '12px',
-                  }}
-                >
-                  Launch App
-                </Button>
-              </Box>
+            <Box sx={styles.btnContainer} onClick={handleWalletClick}>
+              <img
+                src='/images/rocket-launch.svg'
+                alt={'rocket-icon'}
+                style={{ marginTop: '5px' }}
+              />
+              <Button
+                sx={{
+                  color: '#000000',
+                  fontFamily: 'Nohemi',
+                  fontSize: '12px',
+                }}
+              >
+                Launch App
+              </Button>
             </Box>
           )}
 
-          {isMobile && (
+          {/* {isMobile && (
             <Box sx={styles.profileNavBar} onClick={toggleDrawer(true)}>
               <MenuIcon
                 style={{ color: 'white', marginTop: '8px', marginLeft: '10px' }}
@@ -298,7 +301,7 @@ const RevampHeader = ({ app }) => {
             onClose={toggleDrawer(false)}
           >
             {drawerContent}
-          </Drawer>
+          </Drawer> */}
 
           {!isMobile && (
             <Box display='flex' sx={{ gap: 2, alignItems: 'center' }}>
