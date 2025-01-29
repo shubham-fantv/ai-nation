@@ -32,7 +32,7 @@ const HowItWorks = () => {
       className='relative py-6 mt-20 rounded-md'
       style={{
         background:
-          'url(/images/aiEngineBg.png), linear-gradient(180deg, #FE964A 0%, #C2C7FF 100%)',
+          'url(/images/aiEngineBg.png), linear-gradient(180deg, #0CDCF4 0%, #C2C7FF 100%)',
         backgroundBlendMode: 'overlay',
         borderRadius: '32px',
         flex: 1,

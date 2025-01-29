@@ -35,6 +35,13 @@
   descent-override: 0%;
 }
 
+@font-face {
+  font-family: 'Micro';
+  src: url('../public/fonts/Micro5-Regular.ttf');
+  font-display: swap;
+  descent-override: 0%;
+}
+
 html,
 body {
   margin: 0;
