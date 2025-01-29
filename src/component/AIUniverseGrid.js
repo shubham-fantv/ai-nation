@@ -44,11 +44,13 @@ const ImageCard = ({ src, name, mCap, url, isTopClipped, isBottomClipped }) => {
                 'linear-gradient(180deg, rgba(30, 30, 30, 0.69) 0%, rgba(30, 30, 30, 0.40) 100%)',
               backdropFilter: 'blur(12px)',
               overflow: 'hidden',
+              flexDirection: 'row',
+              justifyContent: 'flex-start',
+              alignItems: 'flex-start',
             }}
           >
             <h3 className='text-2xl font-semibold text-white'>{name}</h3>
-            <p className='text-sm font-normal text-white'>M cap.</p>
-            <p className='text-sm text-white/80'> {mCap}</p>
+            <p className='text-sm font-normal text-white'>M cap. {mCap}</p>
           </div>
         )}
       </div>
@@ -111,7 +113,7 @@ const AIUniverseGrid = ({ data }) => {
                     key={`${image.id}-${idx}`}
                     src={image.profilePic}
                     name={image.name}
-                    mCap={image.mcap}
+                    mCap={image.marketCap}
                     url={image?.redirectionUrl}
                     isTopClipped={isTopClipped}
                     isBottomClipped={isBottomClipped}
