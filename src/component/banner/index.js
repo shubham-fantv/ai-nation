@@ -19,7 +19,7 @@ const Banner = ({ data }) => {
       className={'min-h rounded-t-[48px] rounded-b-none'}
       sx={{
         background: isMobile
-          ? 'center/contain no-repeat url(/images/ai/aiBannerMobileBg.png)'
+          ? 'center/contain no-repeat url(/images/ai/bannerMobileBg.png)'
           : 'center/contain no-repeat url(/images/ai/bannerBg.png)',
         backgroundSize: 'cover',
       }}
@@ -46,14 +46,15 @@ const Banner = ({ data }) => {
                         <Typography
                           variant='h1'
                           style={{
-                            fontFamily: 'Micro',
+                            fontFamily: 'Tiny',
                             color: '#1E1E1E',
-                            fontSize: '100px',
+                            fontSize: '44px',
                             fontStyle: 'normal',
-                            fontWeight: '400',
-                            lineHeight: '80px',
-                            letterSpacing: '-4px',
                             textTransform: 'uppercase',
+                            textAlign: 'center',
+                            fontWeight: '800',
+                            lineHeight: '44px',
+                            letterSpacing: '-1.76px',
                           }}
                         >
                           Nation state for AI AGents
@@ -66,7 +67,7 @@ const Banner = ({ data }) => {
                         <Typography
                           variant='h1'
                           style={{
-                            fontFamily: 'Micro',
+                            fontFamily: 'Tiny',
                             color: '#1E1E1E',
                             fontSize: '100px',
                             fontStyle: 'normal',
@@ -83,7 +84,7 @@ const Banner = ({ data }) => {
                         <Typography
                           variant='h1'
                           style={{
-                            fontFamily: 'Micro',
+                            fontFamily: 'Tiny',
                             color: '#1E1E1E',
                             fontSize: '100px',
                             fontStyle: 'normal',
