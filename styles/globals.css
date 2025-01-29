@@ -42,6 +42,13 @@
   descent-override: 0%;
 }
 
+@font-face {
+  font-family: 'Tiny';
+  src: url('../public/fonts/Tiny5-Regular.ttf');
+  font-display: swap;
+  descent-override: 0%;
+}
+
 html,
 body {
   margin: 0;
