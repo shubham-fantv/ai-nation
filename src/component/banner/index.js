@@ -69,7 +69,7 @@ const Banner = ({ data }) => {
                           style={{
                             fontFamily: 'Tiny',
                             color: '#1E1E1E',
-                            fontSize: '100px',
+                            fontSize: '80px',
                             fontStyle: 'normal',
                             fontWeight: '400',
                             lineHeight: '80px',
@@ -86,7 +86,7 @@ const Banner = ({ data }) => {
                           style={{
                             fontFamily: 'Tiny',
                             color: '#1E1E1E',
-                            fontSize: '100px',
+                            fontSize: '80px',
                             fontStyle: 'normal',
                             fontWeight: '400',
                             lineHeight: '80px',
@@ -102,7 +102,7 @@ const Banner = ({ data }) => {
                 </Box>
                 <Typography
                   variant='h2'
-                  className='mb-4'
+                  className='mt-3 mb-4'
                   sx={
                     isMobile
                       ? {
@@ -118,10 +118,10 @@ const Banner = ({ data }) => {
                 </Typography>
                 <Button
                   variant='contained'
-                  className={`px-4 py-2 max-w-[170px] text-sm font-bold text-black rounded-xl`}
+                  className={`px-4 py-2 max-w-[170px] text-sm font-bold text-black rounded-xl mt-3`}
                   style={{
                     fontWeight: '500',
-                    fontSize: '16px',
+                    fontSize: '14px',
                     fontFamily: 'Nohemi',
                     borderRadius: '12px',
                     margin: isMobile ? 'auto' : '10px 0px',
