@@ -85,14 +85,13 @@ export default Index;
 
 export async function getServerSideProps(ctx) {
   const cookies = parseCookies(ctx);
-  console.log("🚀 ~ getServerSideProps ~ cookies:", cookies);
-  if (cookies.isLaunched !== "true") {
-    return {
-      redirect: {
-        destination: "/launch-app",
-        permanent: false,
-      },
-    };
-  }
+  // if (cookies.isLaunched !== "true") {
+  //   return {
+  //     redirect: {
+  //       destination: "/launch-app",
+  //       permanent: false,
+  //     },
+  //   };
+  // }
   return { props: {} };
 }

@@ -50,8 +50,8 @@ const KeyboardSimulator = () => {
         playKeySound();
         setText((prev) => prev + char);
         index++;
-        setTimeout(() => setCurrentKey(""), 200);
-        setTimeout(typeNextCharacter, 300);
+        setTimeout(() => setCurrentKey(""), 100);
+        setTimeout(typeNextCharacter, 150);
       } else {
         Cookies.set("isLaunched", "true", { expires: 360 });
         router.push("/");

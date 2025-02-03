@@ -17,17 +17,22 @@ export default Index;
 
 export async function getServerSideProps(ctx) {
   const cookies = parseCookies(ctx);
-  if (cookies.isLaunched == "true") {
-    return {
-      redirect: {
-        destination: "/",
-        permanent: false,
-      },
-    };
-  }
   return {
     props: {
       asLayout: "EmptyLayout",
     },
   };
+  // if (cookies.isLaunched == "true") {
+  //   return {
+  //     redirect: {
+  //       destination: "/",
+  //       permanent: false,
+  //     },
+  //   };
+  // }
+  // return {
+  //   props: {
+  //     asLayout: "EmptyLayout",
+  //   },
+  // };
 }
