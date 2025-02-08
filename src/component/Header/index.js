@@ -307,7 +307,7 @@ const RevampHeader = ({ app }) => {
             )}
           </Box>
 
-          {isMobile && (
+          {/* {isMobile && (
             <Box sx={styles.btnContainer} onClick={handleWalletClick}>
               <img
                 src="/images/rocket-launch.svg"
@@ -324,7 +324,7 @@ const RevampHeader = ({ app }) => {
                 Launch App
               </Button>
             </Box>
-          )}
+          )} */}
 
           {isMobile && (
             <Box sx={styles.profileNavBar} onClick={toggleDrawer(true)}>

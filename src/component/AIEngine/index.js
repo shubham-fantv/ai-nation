@@ -1,98 +1,92 @@
-import React, { useState } from 'react';
-import { MessageSquare, TrendingUp, Video, Mic, Search } from 'lucide-react';
-import styles from './styles';
-import AssessmentIcon from '@mui/icons-material/Assessment';
-import TextSnippetIcon from '@mui/icons-material/TextSnippet';
-import NotesIcon from '@mui/icons-material/Notes';
-import GraphicEqRoundedIcon from '@mui/icons-material/GraphicEqRounded';
-import { useMediaQuery } from '@mui/material';
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import React, { useState } from "react";
+import { MessageSquare, TrendingUp, Video, Mic, Search } from "lucide-react";
+import styles from "./styles";
+import AssessmentIcon from "@mui/icons-material/Assessment";
+import TextSnippetIcon from "@mui/icons-material/TextSnippet";
+import NotesIcon from "@mui/icons-material/Notes";
+import GraphicEqRoundedIcon from "@mui/icons-material/GraphicEqRounded";
+import { useMediaQuery } from "@mui/material";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 const AIEngines = () => {
-  const [selectedEngine, setSelectedEngine] = useState('socialite');
+  const [selectedEngine, setSelectedEngine] = useState("socialite");
   const [currentSlide, setCurrentSlide] = useState(0);
-  const isMobile = useMediaQuery('(max-width:768px)');
+  const isMobile = useMediaQuery("(max-width:768px)");
 
   const engines = [
     {
-      id: 'socialite',
-      title: 'Socialite Engine',
+      id: "creator",
+      title: "Creator Engine",
       description:
-        'Automate your social presence across Twitter, Telegram, and Discord with AI-powered conversation management.',
-      icon: <NotesIcon className='w-6 h-6' />,
-      image: '/images/socialiteBanner.png',
+        "Transform ideas into stunning content – from music to videos – with one-click AI generation.",
+      icon: <TextSnippetIcon className="w-6 h-6" />,
+      image: "/images/creatorEngine.png",
     },
     {
-      id: 'tradex',
-      title: 'TradeX Engine',
+      id: "socialite",
+      title: "Socialite Engine",
       description:
-        'Your 24/7 AI trading companion that analyzes, executes, and optimizes crypto trades autonomously.',
-      icon: <AssessmentIcon className='w-6 h-6' />,
-      image: '/images/tradexBanner.png',
+        "Automate your social presence across Twitter, Telegram, and Discord with AI-powered conversation management.",
+      icon: <NotesIcon className="w-6 h-6" />,
+      image: "/images/socialiteBanner.png",
     },
     {
-      id: 'creator',
-      title: 'Creator Engine',
+      id: "tradex",
+      title: "TradeX Engine",
       description:
-        'Transform ideas into stunning content – from music to videos – with one-click AI generation.',
-      icon: <TextSnippetIcon className='w-6 h-6' />,
-      image: '/images/creatorEngine.png',
+        "Your 24/7 AI trading companion that analyzes, executes, and optimizes crypto trades autonomously.",
+      icon: <AssessmentIcon className="w-6 h-6" />,
+      image: "/images/tradexBanner.png",
+    },
+
+    {
+      id: "vox",
+      title: "VoxAI Engine",
+      description:
+        "Professional-grade voiceovers and audio content, powered by next-gen AI synthesis.",
+      icon: <GraphicEqRoundedIcon className="w-6 h-6" />,
+      image: "/images/voxAIBanner.png",
     },
     {
-      id: 'vox',
-      title: 'VoxAI Engine',
+      id: "alpha",
+      title: "Alpha Engine",
       description:
-        'Professional-grade voiceovers and audio content, powered by next-gen AI synthesis.',
-      icon: <GraphicEqRoundedIcon className='w-6 h-6' />,
-      image: '/images/voxAIBanner.png',
-    },
-    {
-      id: 'alpha',
-      title: 'Alpha Engine',
-      description:
-        'Stay ahead of the market with AI-powered research that spots trending tokens before they moon.',
-      icon: <AssessmentIcon className='w-6 h-6' />,
-      image: '/images/alphaAIBanner.png',
+        "Stay ahead of the market with AI-powered research that spots trending tokens before they moon.",
+      icon: <AssessmentIcon className="w-6 h-6" />,
+      image: "/images/alphaAIBanner.png",
     },
   ];
 
   const nextSlide = () => {
     if (currentSlide !== engines.length - 1) {
       setCurrentSlide((prev) => (prev === engines.length - 1 ? 0 : prev + 1));
-      setSelectedEngine(
-        engines[currentSlide === engines.length - 1 ? 0 : currentSlide + 1].id
-      );
+      setSelectedEngine(engines[currentSlide === engines.length - 1 ? 0 : currentSlide + 1].id);
     }
   };
 
   const prevSlide = () => {
     if (currentSlide !== 0) {
       setCurrentSlide((prev) => (prev === 0 ? engines.length - 1 : prev - 1));
-      setSelectedEngine(
-        engines[currentSlide === 0 ? engines.length - 1 : currentSlide - 1].id
-      );
+      setSelectedEngine(engines[currentSlide === 0 ? engines.length - 1 : currentSlide - 1].id);
     }
   };
 
   return (
     <div style={styles.container}>
       <div style={styles.content}>
-        <div
-          style={
-            isMobile ? styles.mobileHeadingContainer : styles.headingContainer
-          }
-        >
+        <div style={isMobile ? styles.mobileHeadingContainer : styles.headingContainer}>
           <p
             style={{
               ...styles.gradientHeader,
-              fontSize: isMobile ? '38px' : '40px',
+              fontSize: isMobile ? "24px" : "40px",
+              lineHeight: isMobile ? "20px" : "40px",
             }}
           >
-            AI ENGINES{' '}
+            AI ENGINES{" "}
           </p>
-          <p style={{ ...styles.header, fontSize: isMobile ? '38px' : '40px' }}>
-            {' '}
+          <p style={{ ...styles.header, fontSize: isMobile ? "24px" : "40px" }}>
+            {" "}
             for every use case
           </p>
         </div>
@@ -121,9 +115,7 @@ const AIEngines = () => {
                   {engines[currentSlide].title}
                 </p>
               </div>
-              <p style={styles.mobileDescription}>
-                {engines[currentSlide].description}
-              </p>
+              <p style={styles.mobileDescription}>{engines[currentSlide].description}</p>
             </div>
             <div style={styles.carouselControls}>
               <button
@@ -164,27 +156,21 @@ const AIEngines = () => {
                   onClick={() => setSelectedEngine(engine.id)}
                   style={{
                     ...styles.button,
-                    ...(selectedEngine === engine.id
-                      ? styles.selectedButton
-                      : {}),
+                    ...(selectedEngine === engine.id ? styles.selectedButton : {}),
                   }}
                 >
                   <div style={styles.buttonContent}>
                     <div
                       style={{
                         ...styles.iconWrapper,
-                        ...(selectedEngine === engine.id
-                          ? styles.selectedIconWrapper
-                          : {}),
+                        ...(selectedEngine === engine.id ? styles.selectedIconWrapper : {}),
                       }}
                     >
                       {engine.icon}
                       <p
                         style={{
                           ...styles.title,
-                          ...(selectedEngine === engine.id
-                            ? styles.selectedTitle
-                            : {}),
+                          ...(selectedEngine === engine.id ? styles.selectedTitle : {}),
                         }}
                       >
                         {engine.title}
