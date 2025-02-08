@@ -14,14 +14,20 @@ import MenuIcon from "@mui/icons-material/Menu";
 
 const LogOutNavItem = [
   {
-    path: "/airdrop",
-    title: "Airdrop ",
+    path: "https://app.agentnation.xyz/",
+    title: "Trade ",
+    icon: "/images/fantv/menu/reward.svg",
+    newTag: false,
+  },
+  {
+    path: "https://marketplace.agentnation.xyz/irdrop",
+    title: "MarketPlace ",
     icon: "/images/fantv/menu/reward.svg",
     newTag: false,
   },
   {
     path: "/",
-    title: "Whitepaper ",
+    title: "Build ",
     icon: "/images/fantv/menu/reward.svg",
     newTag: true,
   },
@@ -70,7 +76,8 @@ const RevampHeader = ({ app }) => {
       sx={{
         width: 250,
         height: "100%",
-        background: "white",
+        background: "#1E1E1E", // Dark background for drawer
+        color: "#FFFFFF", // Light text for contrast
         backdropFilter: "blur(40px)",
       }}
       role="presentation"
@@ -95,7 +102,7 @@ const RevampHeader = ({ app }) => {
             borderBottom: "1px solid #e0e0e0",
           }}
         >
-          <Box sx={styles.pointContainer}>
+          {/* <Box sx={styles.pointContainer}>
             <img
               style={{ width: "24px", height: "24px", marginRight: "8px" }}
               src="/images/seasonIcon.png"
@@ -112,7 +119,7 @@ const RevampHeader = ({ app }) => {
             >
               {airdropPoints}
             </Typography>
-          </Box>
+          </Box> */}
         </Box>
         {LogOutNavItem?.map((item, i) => (
           <Link key={i} prefetch={false} href={item?.path} passHref>
@@ -130,7 +137,7 @@ const RevampHeader = ({ app }) => {
                 variant="h6"
                 className="nav-item"
                 sx={{
-                  color: router.pathname === item?.path ? "#000000" : "#000000",
+                  color: router.pathname === item?.path ? "#FFF" : "#FFF",
                   fontFamily: "Nohemi",
                   fontSize: "16px",
                   fontWeight: 500,
@@ -143,12 +150,12 @@ const RevampHeader = ({ app }) => {
                   <Box
                     sx={{
                       marginLeft: "10px",
-                      backgroundColor: "rgb(225, 64, 132)",
+                      backgroundColor: "#CCFF00",
                       padding: "2px 5px",
                       borderRadius: "10px",
                       fontSize: "8px",
                       fontWeight: 700,
-                      color: "rgb(255, 255, 255)",
+                      color: "#000",
                       textAlign: "center",
                       display: "inline-block",
                     }}
@@ -240,7 +247,7 @@ const RevampHeader = ({ app }) => {
                       cursor: "pointer",
                     }}
                   >
-                    Hire
+                    Marketplace
                   </Typography>
                   {/* <Typography
                     variant="h6"
@@ -266,6 +273,35 @@ const RevampHeader = ({ app }) => {
                   >
                     Build New Agent
                   </Typography> */}
+                  <Typography
+                    variant="h6"
+                    className="nav-item"
+                    sx={{
+                      color: "#FFF",
+                      display: "flex",
+                      fontFamily: "Nohemi",
+                      fontSize: "16px",
+                      cursor: "pointer",
+                    }}
+                  >
+                    Build
+                    <Box
+                      sx={{
+                        marginLeft: "10px",
+                        height: "max-content",
+                        backgroundColor: "#FF5722", // Accent color
+                        padding: "2px 5px",
+                        borderRadius: "10px",
+                        fontSize: "8px",
+                        fontWeight: 700,
+                        color: "#FFFFFF",
+                        textAlign: "center",
+                        display: "inline-block",
+                      }}
+                    >
+                      Coming Soon
+                    </Box>
+                  </Typography>
                 </Box>
               </Box>
             )}
@@ -290,21 +326,15 @@ const RevampHeader = ({ app }) => {
             </Box>
           )}
 
-          {/* {isMobile && (
+          {isMobile && (
             <Box sx={styles.profileNavBar} onClick={toggleDrawer(true)}>
-              <MenuIcon
-                style={{ color: 'white', marginTop: '8px', marginLeft: '10px' }}
-              />
+              <MenuIcon style={{ color: "white", marginTop: "8px", marginLeft: "10px" }} />
             </Box>
           )}
 
-          <Drawer
-            anchor='right'
-            open={isMenuOpen}
-            onClose={toggleDrawer(false)}
-          >
+          <Drawer anchor="right" open={isMenuOpen} onClose={toggleDrawer(false)}>
             {drawerContent}
-          </Drawer> */}
+          </Drawer>
 
           {!isMobile && (
             <Box display="flex" sx={{ gap: 2, alignItems: "center" }}>
