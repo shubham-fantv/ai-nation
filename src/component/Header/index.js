@@ -289,12 +289,12 @@ const RevampHeader = ({ app }) => {
                       sx={{
                         marginLeft: "10px",
                         height: "max-content",
-                        backgroundColor: "#FF5722", // Accent color
+                        backgroundColor: "#CCFF00",
                         padding: "2px 5px",
                         borderRadius: "10px",
                         fontSize: "8px",
                         fontWeight: 700,
-                        color: "#FFFFFF",
+                        color: "#000",
                         textAlign: "center",
                         display: "inline-block",
                       }}
