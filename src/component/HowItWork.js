@@ -29,14 +29,14 @@ const HowItWorks = () => {
 
   return (
     <div
-      className="relative py-6 mt-20 rounded-md"
+      className="relative py-6 rounded-md"
       style={{
         background:
           "url(/images/aiEngineBg.png), linear-gradient(180deg, #0CDCF4 0%, #C2C7FF 100%)",
         backgroundBlendMode: "overlay",
         borderRadius: "32px",
         flex: 1,
-        margin: `${isDesktop ? "80px auto" : "50px 15px"}`,
+        margin: `${isDesktop ? "80px auto" : "0px 15px 50px 15px"}`,
       }}
     >
       <div className="px-6 pb-8 mx-auto max-w-7xl">

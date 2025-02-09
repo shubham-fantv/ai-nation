@@ -2,49 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap");
 
-@import url('https://db.onlinewebfonts.com/c/29ddb4605533a38e086b48fa105e0d12?family=Nohemi'); */
-/* @font-face {
-  font-family: 'Nohemi';
-  src: url('https://db.onlinewebfonts.com/t/29ddb4605533a38e086b48fa105e0d12.eot');
-  src: url('https://db.onlinewebfonts.com/t/29ddb4605533a38e086b48fa105e0d12.eot?#iefix')
-      format('embedded-opentype'),
-    url('https://db.onlinewebfonts.com/t/29ddb4605533a38e086b48fa105e0d12.woff2')
-      format('woff2'),
-    url('https://db.onlinewebfonts.com/t/29ddb4605533a38e086b48fa105e0d12.woff')
-      format('woff'),
-    url('https://db.onlinewebfonts.com/t/29ddb4605533a38e086b48fa105e0d12.ttf')
-      format('truetype'),
-    url('https://db.onlinewebfonts.com/t/29ddb4605533a38e086b48fa105e0d12.svg#Nohemi')
-      format('svg');
-} */
+@import url("https://db.onlinewebfonts.com/c/29ddb4605533a38e086b48fa105e0d12?family=Nohemi");
+@font-face {
+  font-family: "Nohemi";
+  src: url("https://db.onlinewebfonts.com/t/29ddb4605533a38e086b48fa105e0d12.eot");
+  src: url("https://db.onlinewebfonts.com/t/29ddb4605533a38e086b48fa105e0d12.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/29ddb4605533a38e086b48fa105e0d12.woff2") format("woff2"),
+    url("https://db.onlinewebfonts.com/t/29ddb4605533a38e086b48fa105e0d12.woff") format("woff"),
+    url("https://db.onlinewebfonts.com/t/29ddb4605533a38e086b48fa105e0d12.ttf") format("truetype"),
+    url("https://db.onlinewebfonts.com/t/29ddb4605533a38e086b48fa105e0d12.svg#Nohemi") format("svg");
+}
 
 @font-face {
-  font-family: 'Nohemi';
-  src: url('../public/fonts/Nohemi.ttf');
+  font-family: "Nohemi";
+  src: url("../public/fonts/Nohemi.ttf");
   font-display: swap;
   descent-override: 0%;
 }
 
 @font-face {
-  font-family: 'BricolageGrotesque';
-  src: url('../public/fonts/BricolageGrotesque-VariableFont_opsz\,wdth\,wght.ttf');
+  font-family: "BricolageGrotesque";
+  src: url("../public/fonts/BricolageGrotesque-VariableFont_opsz\,wdth\,wght.ttf");
   font-display: swap;
   descent-override: 0%;
 }
 
 @font-face {
-  font-family: 'Micro';
-  src: url('../public/fonts/Micro5-Regular.ttf');
+  font-family: "Micro";
+  src: url("../public/fonts/Micro5-Regular.ttf");
   font-display: swap;
   descent-override: 0%;
 }
 
 @font-face {
-  font-family: 'Tiny';
-  src: url('../public/fonts/Tiny5-Regular.ttf');
+  font-family: "Tiny";
+  src: url("../public/fonts/Tiny5-Regular.ttf");
   font-display: swap;
   descent-override: 0%;
 }
@@ -55,7 +51,7 @@ body {
   padding: 0;
   scroll-behavior: auto;
   margin: auto;
-  font-family: 'Nohemi', sans-serif;
+  font-family: "Nohemi", sans-serif;
   font-weight: 400;
   overflow-x: clip;
   line-height: 19px;
@@ -65,7 +61,7 @@ body {
 }
 
 * {
-  font-family: 'Nohemi';
+  font-family: "Nohemi";
 }
 
 a {
@@ -79,4 +75,15 @@ a {
 
 img {
   max-width: 100%;
+}
+
+.gradient-text {
+  font-family: "Press Start 2P", sans-serif; /* Use a pixel-style font */
+  font-size: 40px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #e6ff6d, #ffffff); /* Adjust colors */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }

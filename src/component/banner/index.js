@@ -118,7 +118,7 @@ const Banner = ({ data }) => {
                     fontSize: "14px",
                     fontFamily: "Nohemi",
                     borderRadius: "12px",
-                    margin: isMobile ? "auto" : "10px 0px",
+                    margin: isMobile ? "auto" : "20px 0px",
                     boxShadow: "0px 6px 12px 0px #1E1E1E1F",
                     border: "1px solid #FFF",
                     paddingInline: "10px",
@@ -152,7 +152,9 @@ const Banner = ({ data }) => {
       <div className="w-full">
         <Typography
           variant="h5"
-          className={`mb-6 font-semibold text-center ${isMobile ? "text-2xl" : "text-4xl"}`}
+          className={`mb-6 font-bold font-[nohemi] text-center ${
+            isMobile ? "text-2xl" : "text-4xl"
+          }`}
         >
           Featured Agents
         </Typography>
@@ -175,7 +177,7 @@ const Banner = ({ data }) => {
                       <Typography
                         variant="body1"
                         className={` font-bold self-end text-white ${
-                          isMobile ? "text-sm leading-[20px]" : "text-2xl leading-[25px]"
+                          isMobile ? "text-sm leading-[20px]" : "text-[20px] leading-[20px]"
                         }`}
                       >
                         {item?.name}

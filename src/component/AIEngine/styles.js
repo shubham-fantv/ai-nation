@@ -2,7 +2,7 @@ import { fontWeight } from "@mui/system";
 
 const styles = {
   container: {
-    minHeight: "100vh",
+    minHeight: "95vh",
     marginTop: "30px",
     padding: "14px",
   },
