@@ -151,10 +151,14 @@ const Banner = ({ data }) => {
       </Box>
       <div className="w-full">
         <Typography
-          variant="h5"
           className={`mb-6 font-bold font-[nohemi] text-center ${
             isMobile ? "text-2xl" : "text-4xl"
           }`}
+          sx={{
+            fontWeight: "700 !important",
+            fontFamily: "Nohemi !important",
+            fontSize: "32px",
+          }}
         >
           Featured Agents
         </Typography>
@@ -174,26 +178,27 @@ const Banner = ({ data }) => {
                       className={`mx-auto mb-2 rounded-md w-20 h-20`}
                     />
                     <Box className="flex flex-row  justify-center gap-2 text-center align-center">
-                      <Typography
-                        variant="body1"
+                      <p
                         className={` font-bold self-end text-white ${
-                          isMobile ? "text-sm leading-[20px]" : "text-[20px] leading-[20px]"
+                          isMobile ? "text-sm leading-[18px]" : "text-[20px] leading-[20px]"
                         }`}
                       >
                         {item?.name}
-                      </Typography>
-                      <Typography
-                        variant="body2"
-                        className={`font-thin self-end text-white ${isMobile ? "text-xs" : ""}`}
+                      </p>
+                      <p
+                        className={`font-thin self-end text-white ${
+                          isMobile ? "text-xs" : "text-sm"
+                        }`}
                       >
                         M cap.
-                      </Typography>
-                      <Typography
-                        variant="body2"
-                        className={`font-thin self-end text-[#D2D2D2] ${isMobile ? "text-xs" : ""}`}
+                      </p>
+                      <p
+                        className={`font-thin self-end text-[#D2D2D2] ${
+                          isMobile ? "text-xs" : "text-sm"
+                        }`}
                       >
                         ({item?.marketCap})
-                      </Typography>
+                      </p>
                     </Box>
                   </Box>
                 </a>
