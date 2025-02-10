@@ -96,7 +96,7 @@ const Banner = ({ data }) => {
                 </Box>
                 <Typography
                   variant="h2"
-                  className="mt-3 mb-4"
+                  className="mt-3 "
                   sx={
                     isMobile
                       ? {
@@ -118,7 +118,7 @@ const Banner = ({ data }) => {
                     fontSize: "14px",
                     fontFamily: "Nohemi",
                     borderRadius: "12px",
-                    margin: isMobile ? "auto" : "0px 0px",
+                    margin: isMobile ? "auto" : "16px 0px",
                     boxShadow: "0px 6px 12px 0px #1E1E1E1F",
                     border: "1px solid #FFF",
                     paddingInline: isMobile ? "20px" : "0px 0px",
