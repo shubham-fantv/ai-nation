@@ -42,7 +42,7 @@ const FeatureCards = () => {
         {features.map((feature, index) => (
           <Box
             key={index}
-            className="bg-[#242424] p-6 rounded-2xl flex flex-col shadow-md hover:shadow-lg cursor-pointer transition duration-300"
+            className="bg-[#242424] p-6 rounded-2xl flex flex-col shadow-md hover:bg-[#37393e] cursor-pointer transition duration-300"
             sx={{ border: "1.5px solid #FFFFFF26" }}
             onClick={() => openLink(feature?.link)}
           >

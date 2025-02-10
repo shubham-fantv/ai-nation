@@ -10,7 +10,7 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 const AIEngines = () => {
-  const [selectedEngine, setSelectedEngine] = useState("socialite");
+  const [selectedEngine, setSelectedEngine] = useState("creator");
   const [currentSlide, setCurrentSlide] = useState(0);
   const isMobile = useMediaQuery("(max-width:768px)");
 
@@ -22,6 +22,14 @@ const AIEngines = () => {
         "Transform ideas into stunning content – from music to videos – with one-click AI generation.",
       icon: <TextSnippetIcon className="w-6 h-6" />,
       image: "/images/creatorEngine.png",
+    },
+    {
+      id: "vox",
+      title: "VoxAI Engine",
+      description:
+        "Professional-grade voiceovers and audio content, powered by next-gen AI synthesis.",
+      icon: <GraphicEqRoundedIcon className="w-6 h-6" />,
+      image: "/images/voxAIBanner.png",
     },
     {
       id: "socialite",
@@ -40,14 +48,6 @@ const AIEngines = () => {
       image: "/images/tradexBanner.png",
     },
 
-    {
-      id: "vox",
-      title: "VoxAI Engine",
-      description:
-        "Professional-grade voiceovers and audio content, powered by next-gen AI synthesis.",
-      icon: <GraphicEqRoundedIcon className="w-6 h-6" />,
-      image: "/images/voxAIBanner.png",
-    },
     {
       id: "alpha",
       title: "Alpha Engine",

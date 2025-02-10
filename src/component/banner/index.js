@@ -112,16 +112,16 @@ const Banner = ({ data }) => {
                 </Typography>
                 <Button
                   variant="contained"
-                  className={`px-4 py-2 max-w-[170px] text-sm font-bold text-black rounded-xl mt-3`}
+                  className={`px-8 py-2 max-w-[140px] text-sm font-bold text-black rounded-xl mt-3`}
                   style={{
                     fontWeight: "700",
                     fontSize: "14px",
                     fontFamily: "Nohemi",
                     borderRadius: "12px",
-                    margin: isMobile ? "auto" : "20px 0px",
+                    margin: isMobile ? "auto" : "0px 0px",
                     boxShadow: "0px 6px 12px 0px #1E1E1E1F",
                     border: "1px solid #FFF",
-                    paddingInline: "10px",
+                    paddingInline: isMobile ? "20px" : "0px 0px",
                     alignItems: "center",
                     justifyContent: "center",
                     height: "40px",
@@ -164,7 +164,7 @@ const Banner = ({ data }) => {
         </Typography>
         <Box className="grid w-full gap-10 bg-gradient-to-t from-black via-black/50 to-transparent">
           <div className="w-[95%] mx-2 justify-items-start items-center *:w-full grid grid-cols-0 md:grid-cols-0 lg:grid-cols-0 gap-10">
-            <Marquee play={true} pauseOnHover direction="left">
+            <Marquee play={false} pauseOnHover direction="left">
               {data?.data?.topBarAgents?.map((item, index) => (
                 <a href={item?.redirectionUrl} rel="noreferrer" key={index}>
                   <Box
@@ -175,9 +175,9 @@ const Banner = ({ data }) => {
                     <img
                       src={item?.profilePic}
                       alt="Agent"
-                      className={`mx-auto mb-2 rounded-md w-20 h-20`}
+                      className={`mx-auto mb-2 self-end rounded-md w-20 h-20`}
                     />
-                    <Box className="flex flex-row  justify-center gap-2 text-center align-center">
+                    <Box className="flex flex-row self-end  justify-center gap-2 text-center align-center">
                       <p
                         className={` font-bold self-end text-white ${
                           isMobile ? "text-sm leading-[18px]" : "text-[20px] leading-[20px]"
@@ -186,18 +186,18 @@ const Banner = ({ data }) => {
                         {item?.name}
                       </p>
                       <p
-                        className={`font-thin self-end text-white ${
+                        className={`font-thin self-end text-white leading-[14px] ${
                           isMobile ? "text-xs" : "text-sm"
                         }`}
                       >
-                        M cap.
+                        (M cap -
                       </p>
                       <p
-                        className={`font-thin self-end text-[#D2D2D2] ${
+                        className={`font-thin self-end text-[#D2D2D2] leading-[14px] ${
                           isMobile ? "text-xs" : "text-sm"
                         }`}
                       >
-                        ({item?.marketCap})
+                        {item?.marketCap})
                       </p>
                     </Box>
                   </Box>

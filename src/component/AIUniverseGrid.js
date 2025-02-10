@@ -10,7 +10,7 @@ const ImageCard = ({ src, name, mCap, url, isTopClipped, isBottomClipped }) => {
 
   return (
     <div
-      className={`relative w-[370px] overflow-hidden ${
+      className={`relative w-[270px] overflow-hidden ${
         isTopClipped ? "h-[140px]" : isBottomClipped ? "h-[140px]" : "h-auto"
       }`}
       style={{
@@ -20,7 +20,7 @@ const ImageCard = ({ src, name, mCap, url, isTopClipped, isBottomClipped }) => {
         borderWidth: isTopClipped
           ? "0px 10px 10px 10px"
           : isBottomClipped
-          ? "10px 10px 0px 0px"
+          ? "10px 10px 0px 10px"
           : "10px",
         borderStyle: "solid",
         borderColor: "#758BA1",
@@ -64,7 +64,7 @@ const AIUniverseGrid = ({ data }) => {
 
   return (
     <div
-      className="relative w-full p-0 overflow-hidden bg-blue-100"
+      className="relative w-full p-0 h-auto sm:h-[80vh] overflow-hidden bg-blue-100"
       style={{
         backgroundImage: "url(/images/aiUniverseBg.png)",
         objectFit: "cover",
@@ -86,7 +86,7 @@ const AIUniverseGrid = ({ data }) => {
             key={index}
             className={`relative h-[140px] ${
               isTopClipped
-                ? "h-[140px] overflow-hidden [&_img]:translate-y-[-200px]"
+                ? "h-[140px] overflow-hidden [&_img]:translate-y-[-100px]"
                 : isBottomClipped
                 ? "h-[140px] overflow-hidden [&_img]:translate-y-[0px]"
                 : "h-auto"
